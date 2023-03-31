@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Quản lý sản phẩm</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Danh sách user</h2>
+
+        <a class="btn btn-sm btn-default" href="http://localhost:3000/addsp">Thêm user</a> 
+
+        <table class="table table-hover" id="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Count</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each sanphams}}
+                <tr>
+                    <td>{{this.ten}}</td>
+                    <td>{{this.giatien}}</td>
+                    <td>{{this.soluong}}</td>
+                    <td><a href="/sanphams/edit/{{this._id}}" class="btn btn-default btn-sm ">Sửa</a>
+                    <a href="sanphams/delete/{{this._id}}" class="btn btn-default btn-sm ">Xóa</a> </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
